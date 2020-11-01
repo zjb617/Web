@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="D:/Code/Web/vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="example">
+        <p>Original message: "{{message}}"</p>
+        <p>Computered reversed message:"{{reversedMessaged}}"</p>
+    </div>
+
+    <script>
+        //创建Vue实例,得到 ViewModel
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                message: 'Hello'
+            },
+            computed: {
+                //计算属性的getter
+                reversedMessaged: function () {
+                    //'this'指向vm实例
+                    return this.message.split('').reverse().join('')
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>JavaScript 字符串方法</h1>
+    <p>单击“试一试”以显示在字符串拆分后的第一个数组元素。</p>
+    <button onclick="myFunction()">试一试</button>
+    <p id="demo"></p>
+    <script>
+        function myFunction() {
+            var str = "a,b,c,d,e,f";
+            var arr = str.split(",");
+            document.getElementById("demo").innerHTML = arr[0];
+        }
+    </script>
+</body>
+
+</html>

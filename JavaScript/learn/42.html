@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>JavaScript 数组排序</h1>
+    <p>点击按钮按年份对汽车进行 排序：</p>
+    <button onclick="myFunction()">排序</button>
+    <p id="demo"></p>
+    <script>
+        var cars = [
+            { type: "BMW", year: 2017 },
+            { type: "Audi", year: 2019 },
+            { type: "porsche", year: 2018 }
+        ];
+
+        displayCars();
+
+        function myFunction() {
+            cars.sort(function (a, b) { return a.year - b.year });
+            displayCars();
+        }
+
+        function displayCars() {
+            document.getElementById("demo").innerHTML =
+                cars[0].type + " " + cars[0].year + "<br>" +
+                cars[1].type + " " + cars[1].year + "<br>" +
+                cars[2].type + " " + cars[2].year;
+        }
+    </script>
+</body>
+
+</html>

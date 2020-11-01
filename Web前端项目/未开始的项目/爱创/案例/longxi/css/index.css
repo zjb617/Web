@@ -1,0 +1,431 @@
+/*公共样式*/
+/*版心*/
+.inner {
+	width: 1000px;
+	/*块级元素水平居中*/
+	margin: 0 auto;
+	/*相对定位不脱离标准文档流   不设置left top 位置不会改变*/
+	position: relative;
+}
+img {
+	/*图片转块  去掉3px间隔*/
+	display: block;
+	width: 100%;
+}
+a {
+	text-decoration: none;
+	color: #665E73;
+}
+body {
+	/*文字属性*/
+	font-size: 14px;
+	font-family: "Arial","Microsoft Yahei";
+	color: #8F8C97;
+}
+/*header开始*/
+.header {
+	/*压盖 绝对定位*/
+	position: absolute;
+	left: 0px;
+	top: 19px;
+	width: 992px;
+	height: 103px;
+	z-index: 11;
+}
+.header .logo {
+	/*logo 和 nav 同级元素 并排显示设置宽高  浮动*/
+
+	/*子盒子浮动看看父盒子*/
+	float: left;
+	width: 151px;
+	height: 103px;
+	overflow: hidden;
+}
+.header .logo a {
+	/*a 行内元素 想设置宽高  转块*/
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/logo.png);
+	/*文字用户不能看到*/
+	text-indent: -999em;
+}
+.header .nav {
+	/*同级元素要浮动都浮动 h1浮动 nav也一定浮动*/
+	float: left;
+	/*浮动元素脱离标准文档流 不在区分块级和行内  不设置宽度内容撑开 */
+	height: 91px;
+}
+.header .nav ul li {
+	/*浮动float是盒子属性不能继承 祖先浮动和子元素没有任何关系*/
+	float: left;
+	width: 120px;
+	height: 91px;
+	border-right: 1px solid #EBEBEB;
+	/*为了实现 a标签Hover效果需要将白色背景添加在li*/
+	background-color: #fff;
+}
+.header .nav ul li.chance {
+	width: 114px;
+}
+.header .nav ul li a {
+	display: block;
+	/*块级元素 不设置宽度  自动盛满父盒子的内容宽*/
+	height: 67px;
+	padding-top: 24px;
+	line-height: 35px;
+	font-size: 15px;
+	text-align: center;
+}
+.header .nav ul li a span {
+	display: block;
+}
+.header .nav ul li a span:last-child {
+	font-size: 12px;
+	line-height: 14px;
+}
+.header .nav ul li a:hover {
+	/*a标签  书写的样式都会渲染4个伪类身上*/
+	border-top: 4px solid #F28D00;
+	/*白色背景不能渲染在a 标签因为  hover效果会将a相同的效果层叠掉*/
+	background-color: #F9F9F9;
+	/*位置微调   相对定位  相对于原位置进行偏移*/
+	position: relative;
+	top: -4px;
+	left: 0px;
+	/*显示hover 最终占有高度是91px 将height内减*/
+	height: 63px;
+}
+/*banner开始*/
+.banner {
+	/*标准流*/
+	width: 100%;
+	height: 665px;
+	position: relative;
+	/*将超出的 pic盒子的隐藏*/
+	overflow: hidden;
+}
+.banner .pic {
+	/*绝对定位元素 水平居中  让大盒子设置居中 内部的所有子元素都跟着一起移动*/
+
+
+	/*大盒子宽度设置为图片宽度 1920px*/
+	width: 1920px;
+	height: 665px;
+	position: absolute;
+	/*左侧在屏幕的中心*/
+	left: 50%;
+	/*拉回自身宽度的一半*/
+	margin-left: -960px;
+}
+.banner .pic ul li {
+	/*呼吸轮播图 效果  所有的图片摞在一起*/
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 1920px;
+	height: 665px;
+	/*绝对定位的 后面的压盖住前面的*/
+}
+.banner .pic ul li:first-child {
+	/*默认显示第一张图片*/
+	z-index: 5;
+} 
+.banner .inner .circles {
+	position: absolute;
+	width: 15px;
+	height: 270px;
+	/*渲染小棍*/
+	background: url(../images/indexbg.png) repeat-y center top;
+	z-index: 10;
+	/*inner 是circles参考盒子 inner没有高度  不能使用Bottom 只能使用top*/
+	left: 0px;
+	top: 218px;
+}
+.banner .inner .circles ol li {
+	/*渲染小圆点*/
+	width: 15px;
+	height: 15px;
+	background: url(../images/circle.png);
+	/*同级元素的间隔使用mg*/
+	margin-bottom: 70px;
+	position: relative;
+}
+.banner .inner .circles ol li a {
+	/*调整位置*/
+	position: absolute;
+	/*left top 调整的是盒子的位置*/
+	left: -76px;
+	top: -12px;
+	width: 103px;
+	height: 42px;
+	/*background-position：  0px -1px 显示小图标*/
+	background: url(../images/icon.png) 0px -1px;
+	display: none;
+}
+.banner .inner .circles ol li.cur a {
+	/*指定元素 出显示小图标*/
+	display: block;
+}
+.banner .inner .circles ol li:nth-child(2) a {
+	background-position: 0px -43px;
+} 
+.banner .inner .circles ol li:nth-child(3) a {
+	background-position: 0px -87px;
+}
+.banner .inner .circles ol li:last-child a {
+	background-position: 0px -129px;
+}
+.banner .inner .video {
+	/*绝对定位调整位置*/
+	position: absolute;
+	width: 151px;
+	height: 89px;
+	/*盒子位置*/
+	top: 500px;
+	z-index: 6;
+	right: 29px;
+}
+
+/*content 开始*/
+.content {
+	width: 100%;
+	/*省略高度 内容撑开*/
+
+	/*padding可以渲染背景图*/
+	padding-bottom: 30px;
+	background: url(../images/mainbg.png) no-repeat center top;
+}
+.content .inner .news {
+	position: absolute;
+	left: 0px;
+	top: -54px;
+	width: 960px;
+	height: 36px;
+	padding: 18px 20px 0px 20px;
+	background-color: #fff;
+	/*都有z-index html结构后面的压盖住前面的*/
+	z-index: 5;
+}
+.content .inner .news h3 {
+	float: left;
+	width: 94px;
+	height: 22px;
+	font-size: 16px;
+	line-height: 22px;
+}
+.content .inner .news ul {
+	float: left;
+	width: 587px;
+	height: 16px;
+	font-size: 12px;
+	line-height: 16px;
+	/*溢出隐藏*/
+	overflow: hidden;
+}
+.content .inner .news ul a {
+	margin-right: 14px;
+}
+.content .inner .news .btns {
+	float: left;
+	width: 46px;
+	height: 17px;
+}
+.content .inner .news .btns a {
+	float: left;
+	width: 23px;
+	height: 17px;
+	background: url(../images/btn_bg.png) -1px 0px;
+}
+.content .inner .news .btns a.rightBtn {
+	background-position: -23px 0px;
+}
+.content .inner .news .btns a:hover {
+	background-position: -1px -17px;
+}
+.content .inner .news .btns a.rightBtn:hover {
+	background-position: -23px -17px;
+}
+.content .inner .news .more {
+	float: right;
+	width: 67px;
+	height: 27px;
+	background-color: #DCDCDC;
+	font-size: 12px;
+	color: #fff;
+	text-align: center;
+	line-height: 27px;
+}
+.content .inner .int {
+	height: 363px;
+	border-top: 1px solid #E1E1E1;
+	border-bottom: 1px solid #E1E1E1;
+	background-color: #F3F3F3;
+	padding: 3px 20px 0px 20px;
+}
+.content .inner .int ul li {
+	/*同级元素并排显示*/
+	float: left;
+	width: 304px;
+	margin-right: 24px;
+}
+.content .inner .int ul li:last-child {
+	margin-right: 0px;
+}
+.content .inner .int ul li .title {
+	height: 50px;
+	font-size: 16px;
+	line-height: 50px;
+}
+.content .inner .int ul li .title h3 {
+	float: left;
+	color: #3F3D31;
+}
+.content .inner .int ul li .title a {
+	float: right;
+	font-size: 12px;
+	color: #AEAAA9;
+	text-decoration: underline;
+}
+.content .inner .int ul li .pic {
+	width: 279px;
+	height: 179px;
+	padding: 14px 10px 0px 10px;
+	background-image: url(../images/bubble.png);
+}
+.content .inner .int ul li .pic img {
+	height: 161px;
+}
+.content .inner .int ul li p {
+	margin-top: 9px;
+	line-height: 24px;
+	font-size: 12px;
+	color: #8C8E8B;
+}
+.content .inner .hot {
+	/*块级元素  不设置宽度 自动盛满父盒子内容宽*/
+	height: 172px;
+	padding: 18px 20px 0px 20px;
+	background: #F3F3F3 url(../images/con_b_bg.png) left bottom no-repeat;
+}
+.content .inner .hot .title {
+	height: 25px;
+}
+.content .inner .hot .title h3 {
+	float: left;
+	color: #483B42;
+	height: 22px;
+	line-height: 22px;
+	font-size: 16px;
+}
+.content .inner .hot .title .btns {
+	float: right;
+	/*
+	浮动元素脱标
+	1 可以设置宽高
+	2  不书写宽高，不设置宽度是内容撑开   不设置高度也是内容撑高如果子盒子浮动不能撑高父盒子。
+
+
+	如果父盒子和子盒子同时设置浮动，子盒子可以将父盒子撑高  
+	*/
+}
+.content .inner .hot .title .btns a {
+	/*两个同级a标签  想并排显示想设置宽高 浮动*/
+	float: left;
+	width: 27px;
+	height: 25px;
+	background: url(../images/btn_bg.png) no-repeat -1px -39px;
+}
+.content .inner .hot .title .btns a.rightBtn {
+	width: 29px;
+	background-position: -28px -39px;
+}
+.content .inner .hot .title .btns a:hover {
+	background-position: -1px -65px;
+}
+.content .inner .hot .title .btns a.rightBtn:hover {
+	background-position: -28px -65px;
+}
+/*友情链接*/
+.content .inner .link {
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	color: #5E6366;
+}
+.content .inner h4 {
+	height: 12px;
+	line-height: 12px;
+	font-size: 12px;
+	padding-left: 7px;
+}
+.content .inner h4 a {
+	color: #7B687E;
+}
+.content .inner .bottom-nav {
+	width: 100%;
+	margin-top: 27px;
+	/*标准流 不设置高度内容撑开  子盒子浮动不能撑高标准流的父盒子 */
+	overflow: hidden;
+}
+.content .inner .bottom-nav ul li {
+	float: left;
+	/*浮动元素不设置宽度  内容撑开*/
+	padding: 0px 30px;
+}
+.content .inner .bottom-nav ul li.zhenghe {
+	padding-left: 15px;
+}
+.content .inner .bottom-nav ul li dl dt {
+	height: 38px;
+	font-size: 12px;
+	line-height: 38px;
+	color: #5F5F6B;
+}
+.content .inner .bottom-nav ul li dl dd {
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+}
+.content .inner .bottom-nav ul li dl dd a {
+	color: #A4A0A1;
+}
+.content .inner .bottom-nav ul li.weixin {
+	padding-left: 20px;
+	padding-top: 9px;
+}
+.content .inner .bottom-nav ul li.weixin p {
+	height: 30px;
+	line-height: 30px;
+	color: #8E8986;
+	text-align: center;
+	font-size: 12px;
+}
+.content .inner .bottom-nav ul li.weixin a {
+	/*想设置宽高*/
+	display: block;
+	width: 62px;
+	height: 22px;
+	background-image: url(../images/weibo.png);
+	margin: 0 auto;
+}
+/*footer*/
+.footer {
+	width: 100%;
+	height: 55px;
+	background-color: #2B2B2B;
+}
+.footer .inner p {
+	float: left;
+	font-size: 12px;
+	height: 55px;
+	line-height: 55px;
+	color: #BDB8BF;
+}
+.footer .inner p:last-child {
+	float: right;
+}
+.footer .inner p:last-child a {
+	color: #868A8D;
+	margin-left: 9px;
+}

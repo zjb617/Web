@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="D:/Code/Web/vue/vue.js"></script>
+</head>
+
+<body>
+    <ul id="v-for-object" class="demo">
+        <li v-for="(value,name, index) in object">
+            {{index}}.{{ name }}:{{ value }}
+        </li>
+    </ul>
+    <script>
+        //创建Vue实例,得到 ViewModel
+        new Vue({
+            el: '#v-for-object',
+            data: {
+                object: {
+                    title: 'How to do lists in Vue',
+                    author: 'Jane Doe',
+                    publishedAt: '2016-04-10'
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>
+
+vue教程已结束 19日可以从一些vue实例入手（菜鸟教程）

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// 所有的函数都是Function的实例
+	// 所有的对象都是Object的实例
+	// 函数也是对象
+
+	// 定义一个对象
+	var obj = {};
+
+	console.log(obj instanceof Object); // true
+	console.log([].constructor instanceof Object); // true
+	console.log([].constructor.constructor instanceof Object); // true
+	console.log(Object instanceof Function); // true
+	console.log(Object instanceof Object); // true
+	console.log(Function instanceof Function); // true
+	console.log(obj instanceof Function); // false
+
+	obj.constructor  // Object
+	obj.__proto__ obj.constructor.prototype
+	// 在开发过程中不要使用__proto__ ,是浏览器添加的。
+	</script>
+</body>
+</html>

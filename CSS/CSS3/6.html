@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            transition: width 2s,height 2s;
+            -webkit-transition:width 2s, height 2s, -webkit-transform 2s;  
+        }
+
+        div:hover {
+            width: 300px;
+            height: 300px;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div>请把鼠标指针放到黄色的div元素上，来查看过渡效果。</div>
+    <p><b>注释：</b>本例在Internet Explorer中无效。</p>
+</body>
+
+</html>

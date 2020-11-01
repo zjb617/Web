@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript 字符串方法</h1>
+
+<p>lastIndexOf() 方法接受第二个参数作为搜索的起始位置：</p>
+
+请记住，lastIndexOf（）方法向后搜索，因此位置 50 表示在第 50 位开始搜索，并搜索到开头。
+
+<p>位置 50 指的是从开头算起的位置 50。</p>
+
+<p id="demo"></p>
+
+<script>
+var str = "The full name of China is the People's Republic of China.";
+var pos = str.lastIndexOf("China", 50);
+document.getElementById("demo").innerHTML = pos;
+</script>
+
+</body>
+</html>

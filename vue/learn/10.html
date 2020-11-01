@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="D:/Code/Web/vue/vue.js"></script>
+</head>
+
+<body>
+    <ul id="example-1">
+        <li v-for="item in items" :key="item.message">
+            {{message}}
+        </li>
+    </ul>
+    
+    <script>
+     //创建Vue实例,得到 ViewModel
+     var vm = new Vue({
+        el: '#app',
+        data: {},
+        methods: {}
+     });
+    </script>
+</body>
+
+</html>

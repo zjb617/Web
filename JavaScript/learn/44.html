@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>请输入 5 到 10 之间的数字：</p>
+
+    <input id="demo" type="text">
+    <button type="button" onclick="myFunction()">检测输入</button>
+
+    <p id="p01"></p>
+
+    <script>
+        function myFunction() {
+            var message, x;
+            message = document.getElementById("p01");
+            message.innerHTML = "";
+            x = document.getElementById("demo").value;
+            try {
+                if (x == "") throw "是空的";
+                if (isNaN(x)) throw "不是数字";
+                x = Number(x);
+                if (x > 10) throw "太大";
+                if (x < 5) throw "太小";
+            }
+            catch (err) {
+                message.innerHTML = "输入：" + err;
+            }
+            finally {
+                document.getElementById("demo").value = "";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+JS 基础 完成

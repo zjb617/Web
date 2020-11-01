@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>JavaScript 数组排序</h1>
+    <p>sort() 方法按字母顺序对数组进行排序。</p>
+    <button onclick="myFunction()">试一试</button>
+    <p id="demo"></p>
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo").innerHTML = fruits;
+
+        function myFunction() {
+            fruits.sort();
+            document.getElementById("demo").innerHTML = fruits;
+        }
+    </script>
+</body>
+
+</html>

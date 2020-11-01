@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// String 是 string值类型的对应包装类型
+	var str = "abcdefg";
+	// console.log(str[1]);
+	// 转为对应的包装类型
+	// var str_obj = new String(str);
+	// console.log(str_obj.valueOf());
+
+	// 解释一下字符串在调用方法时候的几个步骤
+	// var str = "abcdefg";
+	// var arr = str.split("");
+	// 1 var str = new Stirng("abcdefg")
+	// 2 str.split("")
+	// 3 清空str并返回结果 原str不变
+
+
+	// Boolean
+	// 它是bool值类型的对应包装类型
+	// var f = false;
+	// 转为对应的包装类型
+	// var f_obj = new Boolean(f);
+	// f是new Boolean对象的原始值， 而new Boolean是f的对应包装类型 
+	// !f  true !f_obj false 因为f_obj是一个对象 
+	// console.log(f_obj.valueOf())
+
+
+	// Number
+	var num = 3;
+	// 转为对应的包装类型
+	var num_obj = new Number(num);
+
+	// Number本身不是一个安全类， 当Number自执行的时候， 会作为类型转为函数使用
+
+	var a = "3a";
+	var aa = Number(a);
+	</script>
+</body>
+</html>

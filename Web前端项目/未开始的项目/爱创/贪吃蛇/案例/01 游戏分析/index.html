@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript" src="js/Game.js"></script>
+	<script type="text/javascript" src="js/Map.js"></script>
+	<script type="text/javascript" src="js/Food.js"></script>
+	<script type="text/javascript" src="js/Block.js"></script>
+	<script type="text/javascript" src="js/Snake.js"></script>
+	<script type="text/javascript">
+
+	// 实例化map
+	var map = new Map(20, 20, 600, 600);
+	// 实例化food
+	var food = new Food(2, 6);
+	// 实例化snake
+	var snake = new Snake();
+	// 实例化block
+	var block = new Block();
+	// 初始化一个游戏类
+	var g = new Game(map, food, snake, block);
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+.c-color-t {
+    color:#222;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+.mnav {
+    margin-right: 31px;
+    margin-top: 19px;
+    display: inline-block;
+    position: relative;
+}
+
+.c-font-normal {
+    font:13px/23px Arial,sans-serif;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 13px;
+    line-height: 23px;
+    font-family: Arial, sans-serif;
+}
